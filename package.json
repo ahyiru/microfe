@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "microfrontends",
   "version": "0.0.1",
   "sideEffects": [
     "*.css",
@@ -29,7 +29,7 @@
     "test": "npm run lint && jest",
     "snap": "jest --updateSnapshot",
     "eslint": "eslint app/**/*.{js,jsx}",
-    "lint": "eslint app/*.jsx",
+    "lint": "tslint -c tslint.json app/**/*.{ts,tsx,js,jsx}",
     "tslint": "tslint -c tslint.json app/**/*.{ts,tsx}",
     "tslint1": "tslint -c tslint.json -e 'demo/tools/**/*.{ts,tsx}' 'demo/**/*.{ts,tsx}'"
   },

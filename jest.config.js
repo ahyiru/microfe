@@ -10,7 +10,7 @@ module.exports={
   },
   coveragePathIgnorePatterns:['/node_modules/'],
   testRegex:'(/__tests__/.*\\.(test|spec))\\.(tsx?|jsx?)$',
-  testPathIgnorePatterns:['/y_dist/','node'],
+  testPathIgnorePatterns:['/scripts/','configs','common'],
   moduleFileExtensions:['js','jsx','ts','tsx','mjs','json','node'],
   modulePathIgnorePatterns:['/node_modules/'],
   moduleNameMapper:{

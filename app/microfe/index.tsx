@@ -128,7 +128,6 @@ const ReanderApp=props=>{
   const {path,menu,components,current}=props.data;
   const name=path.split('/')[1];
   const prevName=useRef(name);
-  console.log(prevName,name)
   useEffect(()=>{
     handleScripts(prevName.current,name);
     prevName.current=name;
