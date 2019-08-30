@@ -1,0 +1,41 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ],
+  "scripts": {
+    "start": "nodemon scripts/index.js --watch scripts/index.js",
+    "build": "webpack --config scripts/webpack.production.js --progress && npm run clean && mv build dist",
+    "clean": "rimraf dist",
+    "test": "npm run lint && jest",
+    "snap": "jest --updateSnapshot",
+    "eslint": "eslint app/**/*.{js,jsx}",
+    "lint": "eslint app/*.jsx",
+    "tslint": "tslint -c tslint.json app/**/*.{ts,tsx}",
+    "tslint1": "tslint -c tslint.json -e 'demo/tools/**/*.{ts,tsx}' 'demo/**/*.{ts,tsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahyiru/notes"
+  },
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "@angular/common": "^8.2.3",
+    "@angular/compiler": "^8.2.3",
+    "@angular/core": "^8.2.3",
+    "@angular/platform-browser": "^8.2.3",
+    "@angular/platform-browser-dynamic": "^8.2.3",
+    "zone.js": "^0.10.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
+}
