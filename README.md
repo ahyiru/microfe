@@ -18,13 +18,8 @@ vue `http://localhost:7090/`
 angular `http://localhost:8000/`
 
 
-![microfe](./common/images/microfe.jpg)
+![microfe](./common/images/microfe.png)
 
-![ng](./common/images/ng.png)
-
-![react](./common/images/react-page.png)
-
-![vue](./common/images/vue-page.png)
 
 
 

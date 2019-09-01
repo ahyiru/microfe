@@ -37,13 +37,13 @@
       padding-left:@pl;
     }
     >ul{
-      .loop-tree(darken(@bgcolor,15),(@pl + 10),(@level + 1));
+      .loop-tree(darken(@bgcolor,8),(@pl + 10),(@level + 1));
     }
   }
   background-color:@bgcolor;
 }
 
-@treeBgColor:#999;
+@treeBgColor:#b0b0b0;
 @menuWidth:220px;
 .microfe{
   .menu{
@@ -57,7 +57,7 @@
     overflow-x:hidden;
     overflow-y:auto;
     ul{
-      padding:10px 0;
+      // padding:10px 0;
       .loop-tree(@treeBgColor,15px);
       li{
         a{
@@ -65,15 +65,16 @@
           height:38px;
           line-height:38px;
           text-decoration:none;
-          border-bottom:1px solid #777;
-          color:#ddd;
+          border-bottom:1px solid #888;
+          color:#e0e0e0;
+          transition:.2s color;
           &.active{
-            background-color:hsla(0,0%,0%,.12);
-            color:#eee;
+            background-color:hsla(0,0%,0%,.04);
+            color:#ffeb3b;
           }
           &:hover{
-            background-color:hsla(0,0%,0%,.15);
-            color:#eee;
+            background-color:hsla(0,0%,0%,.06);
+            color:#ffeb3b;
           }
         }
         ul{
@@ -109,12 +110,13 @@
         }
       }
       .content{
+        padding:15px 0;
         h1{
           margin:0;
         }
         #react-app{
           height:300px;
-          border:2px dotted #fc0;
+          border:2px dotted #c0f;
           >div{
             height:100%;
             img{
@@ -128,14 +130,14 @@
           #vue-app{
             float: left;
             width: 50%;
-            border:2px dotted #cf0;
+            border:2px dotted #3c0;
             height:340px;
           }
           #angular-app{
             float: left;
             margin-left:20px;
             width: calc(50% - 20px);
-            border:2px dotted #c0f;
+            border:2px dotted #f0c;
             height:340px;
           }
         }
@@ -163,7 +165,7 @@
     right:15px;
     bottom:auto;
     border-radius:1px;
-    background-color:#eee;
+    background-color:#f3f3f3;
     transform:rotate(135deg);
     transform-origin:100% 50% 0;
     transition:all .3s
