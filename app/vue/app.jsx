@@ -1,7 +1,7 @@
 const App={
   data(){
     return{
-      name:'Hello Vue',
+      name:'Micro-Vue',
       logo:require('@common/images/vue.png'),
     };
   },

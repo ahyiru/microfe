@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import './test.less';
 
 const ReactTSApp=props=>{
-  const name='Hello React';
+  const name='Micro-React';
   const logo=require('@common/images/react.svg');
 
   return <div style={{textAlign:'center'}}>

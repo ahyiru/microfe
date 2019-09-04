@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   // styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  name='Hello Angular';
+  name='Micro-Angular';
   logo=require('@common/images/angular.svg');
   constructor( private sanitizer: DomSanitizer ) {}
 }

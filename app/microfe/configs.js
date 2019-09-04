@@ -1,4 +1,4 @@
-export const browserRouter=true;
+export const browserRouter=false;
 
 export const conf={
   react:{

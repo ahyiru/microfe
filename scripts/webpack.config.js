@@ -283,6 +283,8 @@ module.exports={
     // runtimeChunk:{
     //   name:'manifest',
     // },
+    moduleIds:'hashed',
+    chunkIds:'named',
   },
   resolve:{
     modules:[
@@ -293,7 +295,7 @@ module.exports={
     ],
     alias:{
       '@common':path.resolve(__dirname, '../common'),
-      // '@router':path.resolve(__dirname, '../../../yiru/demo/router/router'),
+      '@router':path.resolve(__dirname, '../../../yiru/demo/router/router'),
       'vue$': 'vue/dist/vue.esm.js',
     },
     extensions:['.js','.mjs','.jsx','.ts','.tsx','.json','.css','.less','.vue','.vuex'],

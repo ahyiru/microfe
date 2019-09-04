@@ -2,7 +2,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 const {useState,useEffect,useRef}=React;
 
-import useRouter,{Link} from '@ivu/router';
+import useRouter,{Link} from '@router';
+// import useRouter,{Link} from '@ivu/router';
 import {loadScript,unloadScript} from '@ivu/utils';
 
 import {browserRouter,conf} from './configs';
@@ -84,28 +85,34 @@ const unloaders={
   angular:unloadAngular,
 };
 
+const nameKeys=['','react','vue','angular'];
+
 const mountScripts=async (prevName,name)=>{
-  if(!name){
-    const arr=Object.keys(loaders).filter(v=>v!==prevName);
-    arr.map(async v=>{
-      await loaders[v]();
-    });
-  }else{
-    if(prevName){
-      const MicroApp=await loaders[name]();
+  if(nameKeys.includes(name)){
+    if(!name){
+      const arr=Object.keys(loaders).filter(v=>v!==prevName);
+      arr.map(async v=>{
+        await loaders[v]();
+      });
+    }else{
+      if(prevName){
+        const MicroApp=await loaders[name]();
+      }
     }
   }
 };
 const distroyScripts=async (prevName,name)=>{
-  if(prevName){
-    if(name){
-      await unloaders[prevName]();
+  if(nameKeys.includes(prevName)){
+    if(prevName){
+      if(name){
+        await unloaders[prevName]();
+      }
+    }else{
+      const arr=Object.keys(unloaders).filter(v=>v!==name);
+      arr.map(async v=>{
+        await unloaders[v]();
+      });
     }
-  }else{
-    const arr=Object.keys(unloaders).filter(v=>v!==name);
-    arr.map(async v=>{
-      await unloaders[v]();
-    });
   }
 };
 
@@ -142,6 +149,7 @@ const ReanderApp=props=>{
       <div className="container">
         {breadcrumb(current)}
         <div className="content">
+          {components}
           {
             ['','react'].includes(name)?<ReactApp />:null
           }

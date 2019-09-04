@@ -1,5 +1,4 @@
 
-
 const routers=[{
   url:'/',
   name:'home',
@@ -39,6 +38,10 @@ const routers=[{
   url:'/angular',
   name:'angular',
   component:'serverless',
+},{
+  url:'/test',
+  name:'test',
+  component:()=>import('../test'),
 },{
   url:'/404',
   name:'404',
