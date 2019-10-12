@@ -6,6 +6,9 @@ const colors=require('colors');
 // const path=require('path');
 // const fs=require('fs');
 
+// console.log(1,JSON.stringify(process.env));
+// console.log(2,JSON.stringify(process.argv));
+
 const app = express();
 
 const compiler = webpack(webpackConfig);

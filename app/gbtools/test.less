@@ -1,0 +1,259 @@
+@import '~@common/styles/reset.less';
+
+#app{
+  overflow: auto;
+}
+.main-page{
+  overflow:auto;
+  margin-top:70px;
+  height:calc(100vh - 70px);
+  &.has-sub{
+    margin-top:120px;
+    height:calc(100vh - 120px);
+  }
+  .wrapper{
+    min-height:100%;
+    position: relative;
+    .container{
+      padding: 20px 0;
+      margin:0 auto;
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width:992px){
+  .main-page{
+    .wrapper{
+      .container{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.loop-tree(@bgcolor,@pl,@level:1) when (@level < 5){
+  >li{
+    >a{
+      padding-left:@pl;
+    }
+    >ul{
+      .loop-tree(darken(@bgcolor,8),(@pl + 10),(@level + 1));
+    }
+  }
+  background-color:@bgcolor;
+}
+
+@treeBgColor:#b0b0b0;
+@menuWidth:220px;
+.microfe{
+  .menu{
+    width:@menuWidth;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    background-color:@treeBgColor;
+    color:#fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+    ul{
+      // padding:10px 0;
+      .loop-tree(@treeBgColor,15px);
+      li{
+        a{
+          display:block;
+          height:38px;
+          line-height:38px;
+          text-decoration:none;
+          border-bottom:1px solid #888;
+          color:#e0e0e0;
+          transition:.2s color;
+          &.active{
+            background-color:hsla(0,0%,0%,.04);
+            color:#ffeb3b;
+          }
+          &:hover{
+            background-color:hsla(0,0%,0%,.06);
+            color:#ffeb3b;
+          }
+        }
+        ul{
+          display:none;
+          &.open{
+            display:block;
+          }
+        }
+      }
+    }
+  }
+  .main{
+    padding-left:@menuWidth;
+    .container{
+      padding:15px;
+      min-height:100vh;
+      .breadcrumb{
+        overflow: hidden;
+        border:1px solid #eee;
+        >li{
+          display:block;
+          float:left;
+          padding:5px 10px;
+          position:relative;
+          &:not(:last-of-type){
+            &::after{
+              content:'>';
+              position:absolute;
+              right:-5px;
+              top:7px;
+            }
+          }
+        }
+      }
+      .content{
+        padding:15px 0;
+        h1{
+          margin:0;
+        }
+        #react-app{
+          height:300px;
+          border:2px dotted #c0f;
+          >div{
+            height:100%;
+            img{
+              height: calc(100% - 60px);
+            }
+          }
+        }
+        .content-wrap{
+          overflow:hidden;
+          padding:15px 0;
+          #vue-app{
+            float: left;
+            width: 50%;
+            border:2px dotted #3c0;
+            height:340px;
+          }
+          #angular-app{
+            float: left;
+            margin-left:20px;
+            width: calc(50% - 20px);
+            border:2px dotted #f0c;
+            height:340px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ivu-angle{
+  display:inline-block;
+  font-style:normal;
+  height:100%;
+  width:10px;
+  padding:1px;
+  float:right;
+  position:relative;
+  &::before,&::after{
+    content:'';
+    display:block;
+    position:absolute;
+    width:6px;
+    height:1px;
+    left:auto;
+    top:calc(50% + 3px);
+    right:15px;
+    bottom:auto;
+    border-radius:1px;
+    background-color:#f3f3f3;
+    transform:rotate(135deg);
+    transform-origin:100% 50% 0;
+    transition:all .3s
+  }
+  &::after{
+    transform:rotate(45deg);
+  }
+  &.bottom{
+    &::before,&::after{
+      transform:rotate(135deg);
+      transition:all .3s
+    }
+    &::after{
+      transform:rotate(45deg);
+    }
+  }
+  &.top{
+    &::before,&::after{
+      top:calc(50% - 3px);
+      transform:rotate(225deg);
+      transition:all .3s
+    }
+    &::after{
+      transform:rotate(-45deg);
+    }
+  }
+}
+
+.angle{
+  height:100%;
+  position:relative;
+  &::before,&::after{
+    content:'';
+    display:block;
+    position:absolute;
+    width:6px;
+    height:1px;
+    left:auto;
+    top:calc(50% + 3px);
+    right:15px;
+    bottom:auto;
+    border-radius:1px;
+    background-color:#999;
+    transform:rotate(135deg);
+    transform-origin:100% 50% 0;
+    transition:all .3s
+  }
+  &::after{
+    transform:rotate(45deg);
+  }
+  &.bottom{
+    &::before,&::after{
+      transform:rotate(135deg);
+      transition:all .3s
+    }
+    &::after{
+      transform:rotate(45deg);
+    }
+  }
+  &.top{
+    &::before,&::after{
+      top:calc(50% - 3px);
+      transform:rotate(225deg);
+      transition:all .3s
+    }
+    &::after{
+      transform:rotate(-45deg);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

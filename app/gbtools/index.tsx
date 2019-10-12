@@ -34,7 +34,7 @@ const RenderMenu=props=>{
         </li>;
       }
       return <li key={v.name}>
-        <Link path={v.url} stopPropagation className={active}><span>{v.name}</span></Link>
+        <Link path={v.url} className={active} stopPropagation><span>{v.name}</span></Link>
       </li>;
     });
   };

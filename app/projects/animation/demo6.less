@@ -1,0 +1,257 @@
+/*
+**	test page
+**	20170427 __yiru
+*/
+
+/*.p3d{
+	transform-style:preserve-3d !important;
+}
+.origin{
+	transform-origin:0 0;
+}
+
+@keyframes cir{
+	0%{
+		transform:rotateX(80deg) rotateY(-10deg) rotateZ(0deg);
+	}
+	100%{
+		transform:rotateX(80deg) rotateY(-10deg) rotateZ(-360deg);
+	}
+}
+@keyframes cz{
+	0%{
+		transform:rotateZ(0deg);
+	}
+	100%{
+		transform:rotateZ(-360deg);
+	}
+}
+@keyframes cir1{
+	0%{
+		transform:rotateY(0deg) rotateZ(10deg);
+	}
+	100%{
+		transform:rotateY(-360deg) rotateZ(10deg);
+	}
+}
+@keyframes cir2{
+	0%{
+		transform:rotateY(-120deg) rotateZ(10deg);
+	}
+	100%{
+		transform:rotateY(-480deg) rotateZ(10deg);
+	}
+}
+@keyframes cir3{
+	0%{
+		transform:rotateY(-240deg) rotateZ(10deg);
+	}
+	100%{
+		transform:rotateY(-600deg) rotateZ(10deg);
+	}
+}
+
+.ani-demo{
+	transform-style:preserve-3d;
+	position:relative;
+	margin:50px auto;
+	perspective:1000px;
+	perspective-origin:50% 0;
+	.ani-container{
+		transform-style:preserve-3d;
+		margin:0 auto;
+		position:relative;
+		width:500px;
+		height:500px;
+		background-color:#eee;
+		backface-visibility:hidden;
+		transform:rotateX(60deg) rotateY(-10deg);
+		animation:cir 10s linear 0s infinite;
+		.ani-track{
+			transform-style:preserve-3d;
+			position:absolute;
+			width:500px;
+			height:500px;
+			border-radius:50%;
+			border:3px solid #f60;
+			animation:cz 5s linear 0s infinite;
+		}
+		.ani-center{
+			transform-style:preserve-3d;
+			position:absolute;
+			width:100px;
+			height:100px;
+			line-height:100px;
+			text-align:center;
+			border-radius:50%;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+			background-color:#333;
+			color:#ddd;
+		}
+		.ani-item{
+			transform-style:preserve-3d;
+			position:absolute;
+			transform-origin:250px 0;
+			width:250px;
+			height:100px;
+			line-height:100px;
+			left:-50px;
+			top:50%;
+			transform:translateY(-50%);
+			.ball{
+				transition:all 2s ease-out 0s;
+				transform-origin:50% 50%;
+				position:absolute;
+				width:80px;
+				height:80px;
+				line-height:80px;
+				text-align:center;
+				border-radius:50%;
+				left:0;
+				top:0;
+				transform:translateY(-50%,-50%);
+				background-color:#333;
+				color:rbga(255,255,255,0);
+				color:#fff;
+				opacity:1;
+				overflow:hidden;
+			}
+			&.i1{
+				transform:rotateX(-90deg) rotateY(0deg) translateY(-90px);
+				.ball{
+					// transform:rotateY(10deg) rotateZ(10deg);
+					animation:cir1 10s linear 0s infinite;
+					transition-delay:.9s !important;
+				}
+			}
+			&.i2{
+				transform:rotateX(-90deg) rotateY(120deg) translateY(-90px);
+				.ball{
+					animation:cir2 10s linear 0s infinite;
+					transition-delay:.6s !important;
+				}
+			}
+			&.i3{
+				transform:rotateX(-90deg) rotateY(240deg) translateY(-90px);
+				.ball{
+					animation:cir3 10s linear 0s infinite;
+					transition-delay:.3s !important;
+				}
+			}
+		}
+	}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import './ani1.less';
+
+
+
+/*
+.demo6{
+	width:80px;
+	height:80px;
+	background-color:#3c0;
+	animation:ani 3s ease-in infinite;
+}
+
+@keyframes ani{
+	0%{
+		transform:translate3d(0,0,0) scale(1.0);
+	}
+	40%{
+		transform:translate3d(100px,200px,100px) scale(2.0);
+	}
+	100%{
+		transform:translate3d(0,0,0) scale(1.0);
+	}
+}*/
+
+/*@keyframes rotate {
+    0% {
+        transform: translateX(100px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(100px)  rotate(360deg);
+    }
+}
+@keyframes linear {
+    0%, 100% {
+        transform: translate(80px);
+    }
+    50% {
+        transform: translate(-80px);
+    }
+}
+div {
+    height: 10px;
+    width: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+.outer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    animation-name: linear;
+    animation-duration: 4000ms;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    animation-iteration-count: infinite;
+}
+.inner {
+    animation-name: rotate;
+    animation-duration: 4000ms;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: -100px;
+}*/
+
+
+.tab1{
+	position:absolute;
+	width:70%;
+	height:70%;
+	border-radius:10px;
+	background-color:rgba(255,255,255,.8);
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

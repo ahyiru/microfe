@@ -295,7 +295,8 @@ module.exports={
     ],
     alias:{
       '@common':path.resolve(__dirname, '../common'),
-      '@router':path.resolve(__dirname, '../../../yiru/demo/router/router'),
+      '@styles':path.resolve(__dirname, '../../../yiru/demo/library/styles/index.less'),
+      '@router':path.resolve(__dirname, '../../../yiru/demo/router/index'),
       'vue$': 'vue/dist/vue.esm.js',
     },
     extensions:['.js','.mjs','.jsx','.ts','.tsx','.json','.css','.less','.vue','.vuex'],

@@ -1,26 +1,37 @@
-const devPorts={
-  react:7070,
-  reactTS:7080,
-  vue:7090,
-  angular:8000,
-  microfe:8010,
+const ports={
+  react:{
+    dev:7070,
+    pro:7071,
+  },
+  reactTS:{
+    dev:7080,
+    pro:7081,
+  },
+  vue:{
+    dev:7090,
+    pro:7091,
+  },
+  angular:{
+    dev:8000,
+    pro:8001,
+  },
+  microfe:{
+    dev:8010,
+    pro:8011,
+  },
 };
-const proPorts={
-  react:7071,
-  reactTS:7081,
-  vue:7091,
-  angular:8001,
-  microfe:8011,
-};
-const appName=process.env.APP_NAME||'react';
+
+const appName=process.argv[2]||process.env.APP_NAME||'react';
+const PORT=process.argv[3]||process.env.PORT||ports[appName]['dev'];
+const PRO_PORT=process.argv[3]||process.env.PRO_PORT||ports[appName]['pro'];
 
 module.exports={
   HOST:process.env.IP||'localhost',
-  PORT:process.env.PORT||devPorts[appName],
-  PRO_PORT:process.env.PORT||proPorts[appName],
+  APP_NAME:appName,
+  PORT:PORT,
+  PRO_PORT:PRO_PORT,
   BUILD_DIR:'./build',
   PUBLIC_DIR:'../public',
-  APP_NAME:appName,
   DEV_ROOT_DIR:'/',
   PRD_ROOT_DIR:'./',
   DEFAULT_TOKEN:'Basic 123456',
